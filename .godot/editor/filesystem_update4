@@ -1,0 +1,14 @@
+res://Frog/Frog.gd
+res://Frog/Frog.tscn
+res://main.tscn
+res://World/world.tscn
+res://Player/player.tscn
+res://BG.tscn
+res://World/HP.gd
+res://Player/player.gd
+res://main.gd
+res://Global/Game.gd
+res://Global/Utils.gd
+res://Collectables/cherry.tscn
+res://Collectables/cherry.gd
+res://World/Collectables.gd

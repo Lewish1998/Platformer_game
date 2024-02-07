@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://0ngatt0pqcj7"]
+
+[ext_resource type="Script" path="res://Collectables/cherry.gd" id="1_c67oi"]
+[ext_resource type="Texture2D" uid="uid://b572vsvg1by04" path="res://Graphical Assets/sprites/cherry/cherry-1.png" id="1_tjj7q"]
+[ext_resource type="Texture2D" uid="uid://bwbnuh0qoldh6" path="res://Graphical Assets/sprites/cherry/cherry-2.png" id="2_thewd"]
+[ext_resource type="Texture2D" uid="uid://ckaomrkj8up7j" path="res://Graphical Assets/sprites/cherry/cherry-3.png" id="3_m0jua"]
+[ext_resource type="Texture2D" uid="uid://d1g8ttdmfysx5" path="res://Graphical Assets/sprites/cherry/cherry-4.png" id="4_ns3x7"]
+[ext_resource type="Texture2D" uid="uid://bj6ym0qa6axa7" path="res://Graphical Assets/sprites/cherry/cherry-5.png" id="5_kgp1e"]
+[ext_resource type="Texture2D" uid="uid://b4ku2pxctuv10" path="res://Graphical Assets/sprites/cherry/cherry-6.png" id="6_x45d6"]
+[ext_resource type="Texture2D" uid="uid://cqwt6kktjm833" path="res://Graphical Assets/sprites/cherry/cherry-7.png" id="7_ltjf5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fe0k"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8h2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tjj7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_thewd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m0jua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ns3x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kgp1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x45d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ltjf5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}]
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_c67oi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5fe0k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_s8h2o")
+animation = &"Idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
